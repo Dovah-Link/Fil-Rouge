@@ -40,11 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Fournisseur.cs" />
-    <Compile Include="FournisseurDAO.cs" />
+    <Compile Include="Fournisseur\Fournisseur.cs" />
+    <Compile Include="Fournisseur\FournisseurDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ville.cs" />
-    <Compile Include="VilleDAO.cs" />
+    <Compile Include="Ville\Ville.cs" />
+    <Compile Include="Ville\VilleDAO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

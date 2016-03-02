@@ -52,55 +52,55 @@
     <Compile Include="Accueil.Designer.cs">
       <DependentUpon>Accueil.cs</DependentUpon>
     </Compile>
-    <Compile Include="AjoutFourni.cs">
+    <Compile Include="Ajout\AjoutFourni.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AjoutFourni.Designer.cs">
+    <Compile Include="Ajout\AjoutFourni.Designer.cs">
       <DependentUpon>AjoutFourni.cs</DependentUpon>
     </Compile>
-    <Compile Include="AjoutProduit.cs">
+    <Compile Include="Ajout\AjoutProduit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AjoutProduit.Designer.cs">
+    <Compile Include="Ajout\AjoutProduit.Designer.cs">
       <DependentUpon>AjoutProduit.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsulterCatalogue.cs">
+    <Compile Include="Consultation\ConsulterCatalogue.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsulterCatalogue.Designer.cs">
+    <Compile Include="Consultation\ConsulterCatalogue.Designer.cs">
       <DependentUpon>ConsulterCatalogue.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsulterCommande.cs">
+    <Compile Include="Consultation\ConsulterCommande.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsulterCommande.Designer.cs">
+    <Compile Include="Consultation\ConsulterCommande.Designer.cs">
       <DependentUpon>ConsulterCommande.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreerCommande.cs">
+    <Compile Include="Ajout\AjoutCommande.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreerCommande.Designer.cs">
-      <DependentUpon>CreerCommande.cs</DependentUpon>
+    <Compile Include="Ajout\AjoutCommande.Designer.cs">
+      <DependentUpon>AjoutCommande.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AjoutFourni.resx">
+    <EmbeddedResource Include="Ajout\AjoutFourni.resx">
       <DependentUpon>AjoutFourni.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AjoutProduit.resx">
+    <EmbeddedResource Include="Ajout\AjoutProduit.resx">
       <DependentUpon>AjoutProduit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConsulterCatalogue.resx">
+    <EmbeddedResource Include="Consultation\ConsulterCatalogue.resx">
       <DependentUpon>ConsulterCatalogue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConsulterCommande.resx">
+    <EmbeddedResource Include="Consultation\ConsulterCommande.resx">
       <DependentUpon>ConsulterCommande.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreerCommande.resx">
-      <DependentUpon>CreerCommande.cs</DependentUpon>
+    <EmbeddedResource Include="Ajout\AjoutCommande.resx">
+      <DependentUpon>AjoutCommande.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

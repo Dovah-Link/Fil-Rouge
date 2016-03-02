@@ -1,6 +1,6 @@
 ﻿namespace ApliCommercial
 {
-    partial class CreerCommande
+    partial class AjoutCommande
     {
         /// <summary>
         /// Required designer variable.

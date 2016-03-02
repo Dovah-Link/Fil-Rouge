@@ -29,7 +29,7 @@ namespace ApliCommercial
 
         private void button3_Click(object sender, EventArgs e)
         {
-            CreerCommande CC = new CreerCommande();
+            AjoutCommande CC = new AjoutCommande();
             CC.Show();
         }
 

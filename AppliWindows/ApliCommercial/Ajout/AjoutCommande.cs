@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ApliCommercial
 {
-    public partial class CreerCommande : Form
+    public partial class AjoutCommande : Form
     {
-        public CreerCommande()
+        public AjoutCommande()
         {
             InitializeComponent();
         }
