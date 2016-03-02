@@ -136,8 +136,9 @@
             this.b_annul.TabIndex = 15;
             this.b_annul.Text = "Annuler";
             this.b_annul.UseVisualStyleBackColor = true;
+            this.b_annul.Click += new System.EventHandler(this.b_annul_Click);
             // 
-            // AjoutClient
+            // AjoutFourni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -153,7 +154,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "AjoutClient";
+            this.Name = "AjoutFourni";
             this.Text = "Ajouter Fournisseur";
             this.ResumeLayout(false);
             this.PerformLayout();

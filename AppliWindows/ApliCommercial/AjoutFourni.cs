@@ -43,5 +43,11 @@ namespace ApliCommercial
             con.Close();
 
         }
+
+        private void b_annul_Click(object sender, EventArgs e)
+        {
+
+
+        }
     }
 }
