@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL;
-using ApliCommercial;
 using System.Text.RegularExpressions;
 
 namespace ApliCommercial
@@ -62,7 +61,7 @@ namespace ApliCommercial
             }
         }
 
-        private void tb_mail_TextChanged(object sender, EventArgs e)
+        public void tb_mail_TextChanged(object sender, EventArgs e)
         {
            bool a = MailValide(tb_mail.Text);
             if (a==true)
