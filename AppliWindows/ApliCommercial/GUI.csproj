@@ -52,6 +52,12 @@
     <Compile Include="Accueil.Designer.cs">
       <DependentUpon>Accueil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ajout\AjoutVille.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajout\AjoutVille.designer.cs">
+      <DependentUpon>AjoutVille.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ajout\AjoutFourni.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ajout\AjoutVille.resx">
+      <DependentUpon>AjoutVille.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ajout\AjoutFourni.resx">
       <DependentUpon>AjoutFourni.cs</DependentUpon>

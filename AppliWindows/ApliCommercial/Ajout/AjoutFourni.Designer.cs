@@ -38,6 +38,9 @@
             this.cb_ville = new System.Windows.Forms.ComboBox();
             this.b_ajout = new System.Windows.Forms.Button();
             this.b_annul = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tb_mail = new System.Windows.Forms.TextBox();
+            this.lbl_Email = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
@@ -79,7 +82,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(120, 287);
+            this.label5.Location = new System.Drawing.Point(120, 256);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 18);
             this.label5.TabIndex = 8;
@@ -105,45 +108,77 @@
             // 
             // tb_adresse
             // 
-            this.tb_adresse.Location = new System.Drawing.Point(195, 288);
+            this.tb_adresse.Location = new System.Drawing.Point(195, 255);
             this.tb_adresse.Name = "tb_adresse";
             this.tb_adresse.Size = new System.Drawing.Size(195, 20);
             this.tb_adresse.TabIndex = 12;
             // 
             // cb_ville
             // 
+            this.cb_ville.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_ville.FormattingEnabled = true;
-            this.cb_ville.Location = new System.Drawing.Point(195, 386);
+            this.cb_ville.Location = new System.Drawing.Point(195, 385);
             this.cb_ville.Name = "cb_ville";
             this.cb_ville.Size = new System.Drawing.Size(195, 21);
             this.cb_ville.TabIndex = 13;
-            this.cb_ville.SelectedIndexChanged += new System.EventHandler(this.cb_ville_SelectedIndexChanged);
             // 
             // b_ajout
             // 
-            this.b_ajout.Location = new System.Drawing.Point(345, 475);
+            this.b_ajout.Location = new System.Drawing.Point(296, 479);
             this.b_ajout.Name = "b_ajout";
             this.b_ajout.Size = new System.Drawing.Size(80, 26);
             this.b_ajout.TabIndex = 14;
             this.b_ajout.Text = "Ajouter";
             this.b_ajout.UseVisualStyleBackColor = true;
+            this.b_ajout.Click += new System.EventHandler(this.b_ajout_Click);
             // 
             // b_annul
             // 
-            this.b_annul.Location = new System.Drawing.Point(447, 475);
+            this.b_annul.Location = new System.Drawing.Point(398, 479);
             this.b_annul.Name = "b_annul";
             this.b_annul.Size = new System.Drawing.Size(80, 26);
             this.b_annul.TabIndex = 15;
             this.b_annul.Text = "Annuler";
             this.b_annul.UseVisualStyleBackColor = true;
-            this.b_annul.Click += new System.EventHandler(this.b_annul_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(409, 386);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(68, 20);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Ajouter";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tb_mail
+            // 
+            this.tb_mail.Location = new System.Drawing.Point(195, 320);
+            this.tb_mail.Name = "tb_mail";
+            this.tb_mail.Size = new System.Drawing.Size(195, 20);
+            this.tb_mail.TabIndex = 18;
+            // 
+            // lbl_Email
+            // 
+            this.lbl_Email.AutoSize = true;
+            this.lbl_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Email.ForeColor = System.Drawing.Color.White;
+            this.lbl_Email.Location = new System.Drawing.Point(120, 321);
+            this.lbl_Email.Name = "lbl_Email";
+            this.lbl_Email.Size = new System.Drawing.Size(50, 18);
+            this.lbl_Email.TabIndex = 17;
+            this.lbl_Email.Text = "Email";
             // 
             // AjoutFourni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(554, 526);
+            this.ClientSize = new System.Drawing.Size(586, 526);
+            this.Controls.Add(this.tb_mail);
+            this.Controls.Add(this.lbl_Email);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.b_annul);
             this.Controls.Add(this.b_ajout);
             this.Controls.Add(this.cb_ville);
@@ -156,6 +191,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AjoutFourni";
             this.Text = "Ajouter Fournisseur";
+            this.Load += new System.EventHandler(this.AjoutFourni_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,5 +209,8 @@
         private System.Windows.Forms.ComboBox cb_ville;
         private System.Windows.Forms.Button b_ajout;
         private System.Windows.Forms.Button b_annul;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox tb_mail;
+        private System.Windows.Forms.Label lbl_Email;
     }
 }

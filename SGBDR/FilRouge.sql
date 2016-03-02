@@ -72,6 +72,7 @@ CREATE TABLE FOURNISSEUR
         IDFournisseur			int IDENTITY PRIMARY KEY  NOT NULL ,
         NomFournisseur			varchar (100) ,
         AdresseFournisseur		varchar (300) NOT NULL ,
+		MailFournisseur			varchar (100) ,
         IDVille					int REFERENCES VILLE(IDVille)
 )
 

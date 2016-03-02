@@ -33,5 +33,19 @@ namespace DAL
             con.Close();
             return liste;
         }
+        public void Insert(Fournisseur f)
+        {
+            con.Open();
+
+            SqlCommand requete = new SqlCommand("insert into FOURNISSEUR (NomFournisseur,AdresseFournisseur,MailFournisseur,IDVille) values (@p1,@p2,@p3,@p4)", con);
+            requete.Parameters.AddWithValue("@p1", f.Nom);
+            requete.Parameters.AddWithValue("@p2", f.Adresse);
+            requete.Parameters.AddWithValue("@p3", f.Mail);
+            requete.Parameters.AddWithValue("@p4", f.IDVille);
+
+
+            requete.ExecuteNonQuery();
+            con.Close();
+        }
     }
 }

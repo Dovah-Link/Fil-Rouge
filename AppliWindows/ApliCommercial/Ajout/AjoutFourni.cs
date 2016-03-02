@@ -2,52 +2,64 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL;
+using ApliCommercial;
 
 namespace ApliCommercial
 {
     public partial class AjoutFourni : Form
     {
-        SqlConnection con = new SqlConnection("server=.; database=VILLAGEGREEN; integrated security=true");
-
         public AjoutFourni()
         {
             InitializeComponent();
         }
-
-        private void cb_ville_SelectedIndexChanged(object sender, EventArgs e)
+        private void AjoutFourni_Load(object sender, EventArgs e)
         {
+            MAJVille();
+            //cb_ville.SelectionStart
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Ajout.AjoutVille AJV = new Ajout.AjoutVille();
+            AJV.ShowDialog();
+            MAJVille();
 
         }
-        private void AfficheCB()
+        public void MAJVille()
         {
-            con.Open();
+            VilleDAO database = new VilleDAO();
+            cb_ville.DisplayMember = "Nom";
+            cb_ville.ValueMember = "Id";
+            cb_ville.DataSource = database.List();
+        }
 
-            SqlCommand requete = new SqlCommand("SELECT NomVille FROM VILLE", con);
-
-            SqlDataReader resultat = requete.ExecuteReader();
-
-            while (resultat.Read())
+        private void b_ajout_Click(object sender, EventArgs e)
+        {
+            try
             {
-                FournisseurDAO database = new FournisseurDAO();
-                cb_ville.DataSource = database;
-                cb_ville.DataSource = database.List();
+                Fournisseur f = new Fournisseur();
+                f.Nom = tb_nom.Text;
+                f.Adresse = tb_adresse.Text;
+                f.Mail = tb_mail.Text;
+                f.IDVille = (int)cb_ville.SelectedValue;
+
+                FournisseurDAO data = new FournisseurDAO();
+
+                data.Insert(f);
+                MessageBox.Show("Ajout du fournisseur reussi", "Ajout d'un Fournisseur");
 
             }
-            con.Close();
-
-        }
-
-        private void b_annul_Click(object sender, EventArgs e)
-        {
-
-
+            catch (Exception er)
+            {
+                MessageBox.Show("Une erreur est survenue !\n\n" + er);
+            }
         }
     }
 }
