@@ -158,6 +158,7 @@
             this.tb_mail.Name = "tb_mail";
             this.tb_mail.Size = new System.Drawing.Size(195, 20);
             this.tb_mail.TabIndex = 18;
+            this.tb_mail.TextChanged += new System.EventHandler(this.tb_mail_TextChanged);
             // 
             // lbl_Email
             // 

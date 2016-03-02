@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL;
 using ApliCommercial;
+using System.Text.RegularExpressions;
 
 namespace ApliCommercial
 {
@@ -60,6 +60,33 @@ namespace ApliCommercial
             {
                 MessageBox.Show("Une erreur est survenue !\n\n" + er);
             }
+        }
+
+        private void tb_mail_TextChanged(object sender, EventArgs e)
+        {
+           bool a = MailValide(tb_mail.Text);
+            if (a==true)
+            {
+                tb_mail.BackColor = Color.Green;
+            }
+            else
+            {
+                tb_mail.BackColor = Color.Red;
+            }
+        }
+        public static bool MailValide(string a)
+        {
+            bool b;
+            if ((Regex.IsMatch(a, "^([a-zA-Z0-9]{1,}[._-]{0,1}[a-zA-Z0-9]{1,})+@([a-zA-Z0-9]{2,})[.]{1}[a-zA-Z0-9]{2,}$") == true))
+            {
+                b = true;
+            }
+            else
+            {
+                b = false;
+            }
+            return b;
+
         }
     }
 }
