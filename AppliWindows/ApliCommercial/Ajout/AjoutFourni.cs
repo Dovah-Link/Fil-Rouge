@@ -21,7 +21,6 @@ namespace ApliCommercial
         private void AjoutFourni_Load(object sender, EventArgs e)
         {
             MAJVille();
-            //cb_ville.SelectionStart
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -28,13 +28,15 @@ namespace ApliCommercial
             DGV.RowHeadersVisible = false;
             DGV.Columns[0].Visible = false;
             DGV.Columns[4].Visible = false;
-            
-            DGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
-            DGV.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            DGV.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            DGV.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //DGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+            DGV.Columns["Nom"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            DGV.Columns["Adresse"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            DGV.Columns["Mail"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            DGV.Columns["Ville"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            DGV.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+
         }
     }
     
