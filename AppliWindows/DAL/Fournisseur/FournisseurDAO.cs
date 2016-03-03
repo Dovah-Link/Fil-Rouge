@@ -17,17 +17,19 @@ namespace DAL
 
             con.Open();
 
-            SqlCommand requete = new SqlCommand("select * from client", con);
+            SqlCommand requete = new SqlCommand("select * from FOURNISSEUR F JOIN VILLE V on F.IDVille=V.IDVille ", con);
 
             SqlDataReader resultat = requete.ExecuteReader();
 
             while (resultat.Read())
             {
                 Fournisseur fou = new Fournisseur();
-                fou.Id = Convert.ToInt32(resultat["fou_id"]);
-                fou.Nom = Convert.ToString(resultat["fou_nom"]);
-                fou.IDVille = Convert.ToInt32(resultat["fou_villeID"]);
-
+                fou.Id = Convert.ToInt32(resultat["IDFournisseur"]);
+                fou.Nom = Convert.ToString(resultat["NomFournisseur"]);
+                fou.Mail = Convert.ToString(resultat["MailFournisseur"]);
+                fou.Adresse = Convert.ToString(resultat["AdresseFournisseur"]);
+                fou.IDVille = Convert.ToInt32(resultat["IDVille"]);
+                fou.Ville = Convert.ToString(resultat["NomVille"]);
                 liste.Add(fou);
             }
             con.Close();
@@ -36,7 +38,6 @@ namespace DAL
         public void Insert(Fournisseur f)
         {
             con.Open();
-
             SqlCommand requete = new SqlCommand("insert into FOURNISSEUR (NomFournisseur,AdresseFournisseur,MailFournisseur,IDVille) values (@p1,@p2,@p3,@p4)", con);
             requete.Parameters.AddWithValue("@p1", f.Nom);
             requete.Parameters.AddWithValue("@p2", f.Adresse);

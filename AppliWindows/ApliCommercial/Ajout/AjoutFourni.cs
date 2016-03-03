@@ -38,33 +38,41 @@ namespace ApliCommercial
             cb_ville.ValueMember = "Id";
             cb_ville.DataSource = database.List();
         }
-
         private void b_ajout_Click(object sender, EventArgs e)
         {
-            try
+            bool b = MailValide(tb_mail.Text);
+            if (b == true)
             {
-                Fournisseur f = new Fournisseur();
-                f.Nom = tb_nom.Text;
-                f.Adresse = tb_adresse.Text;
-                f.Mail = tb_mail.Text;
-                f.IDVille = (int)cb_ville.SelectedValue;
+                    try
+                {
+                    Fournisseur f = new Fournisseur();
+                    f.Nom = tb_nom.Text;
+                    f.Adresse = tb_adresse.Text;
+                    f.Mail = tb_mail.Text;
+                    f.IDVille = (int)cb_ville.SelectedValue;
 
-                FournisseurDAO data = new FournisseurDAO();
+                    FournisseurDAO data = new FournisseurDAO();
 
-                data.Insert(f);
-                MessageBox.Show("Ajout du fournisseur reussi", "Ajout d'un Fournisseur");
+                    data.Insert(f);
+                    MessageBox.Show("Ajout du fournisseur reussi", "Ajout d'un Fournisseur");
 
-            }
+                }
             catch (Exception er)
+                {
+                    MessageBox.Show("Une erreur est survenue !\n\n" + er);
+                }
+            }
+            else
             {
-                MessageBox.Show("Une erreur est survenue !\n\n" + er);
+                MessageBox.Show("Erreur de saisie de votre email\nVeuillez recommencez", "Erreur");
+                tb_mail.Text = "";
             }
         }
 
         public void tb_mail_TextChanged(object sender, EventArgs e)
         {
-           bool a = MailValide(tb_mail.Text);
-            if (a==true)
+            bool a = MailValide(tb_mail.Text);
+            if (a == true)
             {
                 tb_mail.BackColor = Color.Green;
             }
@@ -86,6 +94,12 @@ namespace ApliCommercial
             }
             return b;
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form CF = new ConsulterFournisseur();
+            CF.Show();
         }
     }
 }

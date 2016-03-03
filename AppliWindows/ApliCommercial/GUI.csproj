@@ -88,6 +88,12 @@
     <Compile Include="Ajout\AjoutCommande.Designer.cs">
       <DependentUpon>AjoutCommande.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultation\ConsulterFournisseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultation\ConsulterFournisseur.Designer.cs">
+      <DependentUpon>ConsulterFournisseur.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Accueil.resx">
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ajout\AjoutCommande.resx">
       <DependentUpon>AjoutCommande.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultation\ConsulterFournisseur.resx">
+      <DependentUpon>ConsulterFournisseur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
