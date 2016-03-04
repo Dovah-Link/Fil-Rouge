@@ -31,6 +31,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.DGV = new System.Windows.Forms.DataGridView();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,15 +70,30 @@
             this.DGV.Location = new System.Drawing.Point(48, 129);
             this.DGV.Name = "DGV";
             this.DGV.ReadOnly = true;
-            this.DGV.Size = new System.Drawing.Size(381, 210);
+            this.DGV.Size = new System.Drawing.Size(381, 224);
             this.DGV.TabIndex = 8;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.linkLabel1.LinkColor = System.Drawing.Color.RosyBrown;
+            this.linkLabel1.Location = new System.Drawing.Point(403, 89);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(68, 13);
+            this.linkLabel1.TabIndex = 20;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Consulter CA";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // ConsulterFournisseur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(498, 401);
+            this.ClientSize = new System.Drawing.Size(498, 415);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.DGV);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -95,5 +111,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView DGV;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

@@ -38,6 +38,12 @@ namespace ApliCommercial
             DGV.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
 
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ConsulterCA CCA = new ConsulterCA();
+            CCA.Show();
+        }
     }
     
 }

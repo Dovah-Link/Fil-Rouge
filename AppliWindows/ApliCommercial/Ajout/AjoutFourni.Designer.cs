@@ -106,6 +106,7 @@
             this.tb_nom.Name = "tb_nom";
             this.tb_nom.Size = new System.Drawing.Size(195, 20);
             this.tb_nom.TabIndex = 10;
+            this.tb_nom.TextChanged += new System.EventHandler(this.tb_nom_TextChanged);
             // 
             // tb_adresse
             // 

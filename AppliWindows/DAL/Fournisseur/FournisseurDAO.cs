@@ -44,7 +44,6 @@ namespace DAL
             requete.Parameters.AddWithValue("@p3", f.Mail);
             requete.Parameters.AddWithValue("@p4", f.IDVille);
 
-
             requete.ExecuteNonQuery();
             con.Close();
         }

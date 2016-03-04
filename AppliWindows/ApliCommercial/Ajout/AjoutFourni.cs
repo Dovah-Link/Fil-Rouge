@@ -39,6 +39,7 @@ namespace ApliCommercial
         }
         private void b_ajout_Click(object sender, EventArgs e)
         {
+            bool a = NomValide(tb_nom.Text);
             bool b = MailValide(tb_mail.Text);
             if (b == true)
             {
@@ -54,7 +55,6 @@ namespace ApliCommercial
 
                     data.Insert(f);
                     MessageBox.Show("Ajout du fournisseur reussi", "Ajout d'un Fournisseur");
-
                 }
             catch (Exception er)
                 {
@@ -80,6 +80,20 @@ namespace ApliCommercial
                 tb_mail.BackColor = Color.Red;
             }
         }
+        public static bool NomValide(string a)
+        {
+            bool b;
+            if ((Regex.IsMatch(a, "^[A-Za-z0-9 ']{2,}$") == true))
+            {
+                b = true;
+            }
+            else
+            {
+                b = false;
+            }
+            return b;
+
+        }
         public static bool MailValide(string a)
         {
             bool b;
@@ -99,6 +113,20 @@ namespace ApliCommercial
         {
             Form CF = new ConsulterFournisseur();
             CF.Show();
+        }
+
+        private void tb_nom_TextChanged(object sender, EventArgs e)
+        {
+            bool a = NomValide(tb_nom.Text);
+            if(a==true)
+            {
+                tb_nom.BackColor = Color.Green;
+            }
+            else
+            {
+                tb_nom.BackColor = Color.Red;
+            }
+
         }
     }
 }
