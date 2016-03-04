@@ -114,6 +114,7 @@
             this.tb_adresse.Name = "tb_adresse";
             this.tb_adresse.Size = new System.Drawing.Size(195, 20);
             this.tb_adresse.TabIndex = 12;
+            this.tb_adresse.TextChanged += new System.EventHandler(this.tb_adresse_TextChanged);
             // 
             // cb_ville
             // 

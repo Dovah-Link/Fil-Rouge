@@ -41,9 +41,10 @@ namespace ApliCommercial
         {
             bool a = NomValide(tb_nom.Text);
             bool b = MailValide(tb_mail.Text);
-            if (b == true)
+            bool c = AdresseValide(tb_adresse.Text);
+            if (a == true && b == true && c == true)
             {
-                    try
+                try
                 {
                     Fournisseur f = new Fournisseur();
                     f.Nom = tb_nom.Text;
@@ -56,7 +57,7 @@ namespace ApliCommercial
                     data.Insert(f);
                     MessageBox.Show("Ajout du fournisseur reussi", "Ajout d'un Fournisseur");
                 }
-            catch (Exception er)
+                catch (Exception er)
                 {
                     MessageBox.Show("Une erreur est survenue !\n\n" + er);
                 }
@@ -67,6 +68,13 @@ namespace ApliCommercial
                 tb_mail.Text = "";
             }
         }
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form CF = new ConsulterFournisseur();
+            CF.Show();
+        }
+
+        /*---------------------------------------------------------------------------------------------------------- Test saisie couleur des tb au changements de valeurs*/
 
         public void tb_mail_TextChanged(object sender, EventArgs e)
         {
@@ -80,6 +88,47 @@ namespace ApliCommercial
                 tb_mail.BackColor = Color.Red;
             }
         }
+        private void tb_nom_TextChanged(object sender, EventArgs e)
+        {
+            bool a = NomValide(tb_nom.Text);
+            if (a == true)
+            {
+                tb_nom.BackColor = Color.Green;
+            }
+            else
+            {
+                if(tb_nom.Text=="")
+                {
+                    tb_nom.BackColor = Color.White;
+                }
+                else
+                {
+                    tb_nom.BackColor = Color.Red;
+                }
+                
+            }
+        }
+        private void tb_adresse_TextChanged(object sender, EventArgs e)
+        {
+            bool a = AdresseValide(tb_adresse.Text);
+            if (a == true)
+            {
+                tb_adresse.BackColor = Color.Green;
+            }
+            else
+            {
+                if(tb_adresse.Text=="")
+                {
+                    tb_adresse.BackColor = Color.White;
+                }
+                else
+                {
+                    tb_adresse.BackColor = Color.Red;
+                }
+            }
+
+        }
+        /*-----------------------------------------------------------------TEST REGEX-------------------------------------------------------*/
         public static bool NomValide(string a)
         {
             bool b;
@@ -92,7 +141,6 @@ namespace ApliCommercial
                 b = false;
             }
             return b;
-
         }
         public static bool MailValide(string a)
         {
@@ -106,27 +154,19 @@ namespace ApliCommercial
                 b = false;
             }
             return b;
-
         }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        public static bool AdresseValide(string a)
         {
-            Form CF = new ConsulterFournisseur();
-            CF.Show();
-        }
-
-        private void tb_nom_TextChanged(object sender, EventArgs e)
-        {
-            bool a = NomValide(tb_nom.Text);
-            if(a==true)
+            bool b;
+            if ((Regex.IsMatch(a, "^(([0-9]{1,5}[ ]{1,})?[A-Za-z0-9 ]+)$") == true))
             {
-                tb_nom.BackColor = Color.Green;
+                b = true;
             }
             else
             {
-                tb_nom.BackColor = Color.Red;
+                b = false;
             }
-
+            return b;
         }
     }
 }
