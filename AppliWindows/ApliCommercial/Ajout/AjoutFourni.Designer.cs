@@ -143,6 +143,7 @@
             this.b_annul.TabIndex = 15;
             this.b_annul.Text = "Annuler";
             this.b_annul.UseVisualStyleBackColor = true;
+            this.b_annul.Click += new System.EventHandler(this.b_annul_Click);
             // 
             // button1
             // 
@@ -210,6 +211,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AjoutFourni";
             this.Text = "Ajouter Fournisseur";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AjoutFourni_FormClosing);
             this.Load += new System.EventHandler(this.AjoutFourni_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

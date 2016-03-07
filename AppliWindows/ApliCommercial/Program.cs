@@ -16,7 +16,7 @@ namespace ApliCommercial
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AjoutFourni());
+            Application.Run(new ConsulterFournisseur());
         }
     }
 }

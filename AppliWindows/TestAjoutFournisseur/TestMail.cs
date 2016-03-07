@@ -40,6 +40,14 @@ namespace TestAjoutFournisseur
 
             Assert.AreEqual(b, true);
         }
+        [TestMethod]
+        public void BonFormat5()
+        {
+            string a = "vince.sene@gmail.com";
+            bool b = ApliCommercial.AjoutFourni.MailValide(a);
+
+            Assert.AreEqual(b, true);
+        }
     }
     [TestClass]
     public class TestMailFalse

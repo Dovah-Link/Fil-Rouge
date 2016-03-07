@@ -132,7 +132,7 @@ namespace ApliCommercial
         public static bool NomValide(string a)
         {
             bool b;
-            if ((Regex.IsMatch(a, "^[A-Za-z0-9 ']{2,}$") == true))
+            if ((Regex.IsMatch(a, "^[A-Za-z0-9 ]{2,}(['.]{0,1}[A-Za-z0-9]{1,})*$") == true))
             {
                 b = true;
             }
@@ -145,7 +145,7 @@ namespace ApliCommercial
         public static bool MailValide(string a)
         {
             bool b;
-            if ((Regex.IsMatch(a, "^([a-zA-Z0-9]{1,}[._-]{0,1}[a-zA-Z0-9]{1,})+@([a-zA-Z0-9]{2,})[.]{1}[a-zA-Z0-9]{2,}$") == true))
+            if ((Regex.IsMatch(a, "^([a-zA-Z0-9]{1,}[._-]{0,1}[a-zA-Z0-9]{1,})+@([a-zA-Z0-9]{2,})[.]{1,}[a-zA-Z0-9]{2,}$") == true))
             {
                 b = true;
             }
@@ -167,6 +167,26 @@ namespace ApliCommercial
                 b = false;
             }
             return b;
+        }
+
+        private void b_annul_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Voulez vous annuler votre saisie", "Annuler",MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
+            {
+                tb_nom.Text = "";
+                tb_adresse.Text = "";
+                tb_mail.Text = "";
+            }
+        }
+
+        private void AjoutFourni_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           DialogResult result = MessageBox.Show("Voulez vous vraiment quitter ?", "", MessageBoxButtons.YesNo);
+            if(result==DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

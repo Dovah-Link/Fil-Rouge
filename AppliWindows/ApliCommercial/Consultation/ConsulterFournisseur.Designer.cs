@@ -31,7 +31,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.DGV = new System.Windows.Forms.DataGridView();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.lbl_consultca = new System.Windows.Forms.LinkLabel();
+            this.lbl_ajoutfournis = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,19 +74,33 @@
             this.DGV.Size = new System.Drawing.Size(381, 224);
             this.DGV.TabIndex = 8;
             // 
-            // linkLabel1
+            // lbl_consultca
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.linkLabel1.LinkColor = System.Drawing.Color.RosyBrown;
-            this.linkLabel1.Location = new System.Drawing.Point(403, 89);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(68, 13);
-            this.linkLabel1.TabIndex = 20;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Consulter CA";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.lbl_consultca.AutoSize = true;
+            this.lbl_consultca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_consultca.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbl_consultca.LinkColor = System.Drawing.Color.RosyBrown;
+            this.lbl_consultca.Location = new System.Drawing.Point(403, 89);
+            this.lbl_consultca.Name = "lbl_consultca";
+            this.lbl_consultca.Size = new System.Drawing.Size(68, 13);
+            this.lbl_consultca.TabIndex = 20;
+            this.lbl_consultca.TabStop = true;
+            this.lbl_consultca.Text = "Consulter CA";
+            this.lbl_consultca.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // lbl_ajoutfournis
+            // 
+            this.lbl_ajoutfournis.AutoSize = true;
+            this.lbl_ajoutfournis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ajoutfournis.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbl_ajoutfournis.LinkColor = System.Drawing.Color.RosyBrown;
+            this.lbl_ajoutfournis.Location = new System.Drawing.Point(22, 89);
+            this.lbl_ajoutfournis.Name = "lbl_ajoutfournis";
+            this.lbl_ajoutfournis.Size = new System.Drawing.Size(97, 13);
+            this.lbl_ajoutfournis.TabIndex = 21;
+            this.lbl_ajoutfournis.TabStop = true;
+            this.lbl_ajoutfournis.Text = "Ajouter Fournisseur";
+            this.lbl_ajoutfournis.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // ConsulterFournisseur
             // 
@@ -93,12 +108,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(498, 415);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.lbl_ajoutfournis);
+            this.Controls.Add(this.lbl_consultca);
             this.Controls.Add(this.DGV);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ConsulterFournisseur";
-            this.Text = "ConsulterFournisseur";
+            this.Text = "Consulter Fournisseur";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConsulterFournisseur_FormClosing);
             this.Load += new System.EventHandler(this.ConsulterFournisseur_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
             this.ResumeLayout(false);
@@ -111,6 +128,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView DGV;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel lbl_consultca;
+        private System.Windows.Forms.LinkLabel lbl_ajoutfournis;
     }
 }
